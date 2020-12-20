@@ -1,0 +1,49 @@
+<app-header></app-header>
+<div class="container">
+    <div class="row">
+        <div class="col-10">
+
+            <table class="table table-striped">
+                <tr>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Contact no</th>
+                    <th scope="col">City</th>
+
+                    <th>Delete</th>
+                </tr>
+                <tr *ngFor="let item of row; let i = index">
+                    <td><input [(ngModel)]="item.firstName" type="text" required></td>
+                    <td><input [(ngModel)]="item.lastName" type="text" required></td>
+                    <td><input [(ngModel)]="item.contactNo" type="number"></td>
+
+                    <td><select [(ngModel)]="item.city">
+
+                            <option *ngFor="let city of cities" value={{city}} required>{{city}}</option>
+
+                        </select></td>
+                    <td> <button (click)="deleteRow(i)"><i class="fa fa-trash-o" style="font-size:24px; margin-right: 35px;"></i>
+                        </button></td>
+                </tr>
+            </table>
+            <button (click)="addTable()">Add Row</button> <br> <br>
+            <button (click)="submitTable()">Submit</button> <br> <br>
+
+        </div>
+        <div class="col-2">
+            <div class="card text-white bg-primary mb-3">
+                <div class="card-body">
+                    <img src="assets/artificial-intelligence-companies.jpg">
+                </div>
+            </div>
+            <div class="card text-white bg-secondary mb-3">
+                <div class="card-header">Description</div>
+                <div class="card-body">
+                    <h5 class="card-title">Description</h5>
+                    <p class="card-text">{{description}}</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

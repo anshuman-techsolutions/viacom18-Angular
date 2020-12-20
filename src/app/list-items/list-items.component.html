@@ -1,0 +1,42 @@
+<app-header></app-header>
+<div class="container">
+    <div class="row">
+        <div class="col-10">
+         
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">S.No.</th>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Contact No</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of itemList; index as i">
+                        <th scope="row">{{ i + 1 }}</th>
+                        <td>{{item.firstName}}</td>
+                        <td>{{item.lastName}}</td>
+                        <td>{{item.contactNo}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-2">
+            <div class="card text-white bg-primary mb-3">
+              <div class="card-body">
+                <img src="assets/artificial-intelligence-companies.jpg">
+              </div>
+            </div>
+            <div class="card text-white bg-secondary mb-3">
+              <div class="card-header">Description</div>
+              <div class="card-body">
+                <h5 class="card-title">Description</h5>
+                <p class="card-text">{{description}}</p>
+              </div>
+            </div>
+          </div>
+
+    </div>
+</div>
